@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+
+
+
+<head>
+<title>Javascript animation: Demo 1</title>
+<style type="text/css">
+
+body {
+ font:76% normal verdana,arial,tahoma;
+}
+
+#contianer {
+	
+}
+#routeMap {
+	background-image: url(images/route3.jpg);
+	background-repeat:no-repeat;
+	width: 100%;
+	position: absolute;
+	top: 128px;
+	height: 294px;
+	left: 0px;
+}
+
+h1, h2 {
+ font-size:1em;
+}
+
+#routeObject {
+	/* simple box */
+ background-image: url(images/3logo.png);
+	position:absolute;
+	left:59px;
+	top:730px;
+	width:267px;
+	line-height:3em;
+	white-space:nowrap;
+	padding:0.5em;
+	height: 230px;
+}
+/* clock*/
+.details
+{
+font-family		: MS Sans Serif, arial;
+font-size		: 14;
+font-weight		: bold;
+color			: #000000;
+background-color	: #CCCCCC;
+}
+
+</style>
+<script type="text/javascript">
+
+//scale
+
+	$(document).ready(function() {
+		var $winwidth = $(window).width();
+		$("rout3.jpg").attr({
+			width: $winwidth
+		});
+		$(window).bind("resize", function(){
+			var $winwidth = $(window).width();
+			$("img.source-image").attr({
+				width: $winwidth
+			});
+		 });
+	});
+
+
+//basick animation take one 
+var route = null; 
+
+function doMove() {
+  route.style.left = parseInt(route.style.left)+1+'px';
+  setTimeout(doMove,20); 
+}
+
+function init() {
+  route = document.getElementById('routeObject'); 
+  route.style.left = '0px'; // set its initial position to 0px I want this to start the init() on the clock setting
+  doMove(); // start animating
+}
+
+
+window.onload = init;
+
+
+//clock?
+
+
+<!--
+function updateClock ( )
+{
+  var currentTime = new Date ( );
+
+  var currentHours = currentTime.getHours ( );
+  var currentMinutes = currentTime.getMinutes ( );
+  var currentSeconds = currentTime.getSeconds ( );
+
+  // Pad the minutes and seconds with leading zeros, if required
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+  // Choose either "AM" or "PM" as appropriate
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+  // Convert the hours component to 12-hour format if needed
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+  // Convert an hours component of "0" to "12"
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+  // Compose the string for display
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+
+  // Update the time display
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+}
+// -->
+
+</script>
+
+
+
+</script>
+</head>
+
+<body>
+
+
+<h1>Test 1 1</h1>
+<span id="clock">&nbsp;</span>
+
+<h2>Timeout-based animation</h2>
+
+<SPAN CLASS=details ID=clock STYLE="position:relative;"></SPAN>
+<div><img src="images/route3.png" alt="Demo Page" style="position: absolute; top: 0; left: 0;" /></div>
+<div id="routeObject">
+Route 3
+</div>
+
+
+</body>
+</html>
+
+
+
+

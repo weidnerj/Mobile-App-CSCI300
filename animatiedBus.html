@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 Animation Bus</title>	
+	<style>
+		.box1{
+			width:400px;
+			height:200px;
+			background-image:url(images/route3.jpg);
+			background-repeat:no-repeat;
+			top:0px;
+			
+			margin:1px;
+		}
+		
+		.box2{
+	width:54px;
+	height:64px;
+	background-image:url(images/3logo.gif);
+	background-repeat: no-repeat;
+	position:absolute;
+	top:21px;
+	left:330px;
+	margin-left:0px;
+		}
+		
+		@-webkit-keyframes routeMove{
+			
+/*			 from {
+      left: 725;
+      top: 13;
+    }
+
+    to {
+      left: 725px;
+      top: 120px;
+    }
+	
+			 from {
+      left: 725;
+      top: 120;
+    }
+
+    to {
+      left: 700px;
+      top: 120px;
+    }
+	*/
+			0%{
+				-webkit-transform: translateY(0px);
+				}
+			/*Arlington*/	
+			3.125% {
+				-webkit-transform: translateY(110px);
+			}
+			/*21st*/
+			6.25% {
+				-webkit-transform: translateX(-15px) translateY(110px) ;
+			}
+			/*Community*/
+			9.375% {
+				-webkit-transform: translateX(-15px) translateY(120px) ;
+			}
+			12.5% {
+				-webkit-transform: translateX(-1px) translateY(120px) ;
+			}
+			15.625% {
+				-webkit-transform: translateX(-1px) translateY(135px) ;
+			}
+			/*Ellenberger*/
+			18.75% {
+				-webkit-transform: translateX(-150px) translateY(135px) ;
+			}
+			
+			21.875% {
+				-webkit-transform: translateX(-150px) translateY(145px) ;
+			}
+			/*Pennsylvania*/
+			25% {
+				-webkit-transform: translateX(-155px) translateY(145px) ;
+			}
+			/*Ohio*/
+			28.125% {
+				-webkit-transform: translateX(-165px) translateY(145px) ;
+			}
+			31.25% {
+				-webkit-transform: translateX(-165px) translateY(140px) ;
+			}
+			37.5% {
+				-webkit-transform: translateX(-200px) translateY(140px) ;
+			}
+			40.625% {
+				-webkit-transform: translateX(-270px) translateY(140px) ;
+			}
+			43.75% {
+				-webkit-transform: translateX(-275px) translateY(145px) ;
+			}
+			46.85% {
+				-webkit-transform: translateX(-300px) translateY(140px) ;
+			}
+			
+			50% {
+				-webkit-transform: translateX(-315px) translateY(140px) ;
+			}
+			51% {
+				-webkit-transform: translateX(-315px) translateY(150px) ;
+			}
+			52% {
+				-webkit-transform: translateX(-315px) translateY(150px) ;
+			}
+			53% {
+				-webkit-transform: translateX(-315px) translateY(155px) ;
+			}
+			53.125% {
+				-webkit-transform: translateX(-300px) translateY(155px) ;
+			}
+			56.25% {
+				-webkit-transform: translateX(-300px) translateY(140px) ;
+			}
+			59.375% {
+				-webkit-transform: translateX(-275px) translateY(145px) ;
+			}
+			62.55% {
+				-webkit-transform: translateX(-270px) translateY(140px) ;
+			}
+			65.625% {
+				-webkit-transform: translateX(-200px) translateY(140px) ;
+			}
+			68.75% {
+				-webkit-transform: translateX(-190px) translateY(147px) ;
+			}
+			71.875% {
+				-webkit-transform: translateX(-165px) translateY(147px) ;
+			}
+			75% {
+				-webkit-transform: translateX(-155px) translateY(145px) ;
+			}
+			77.08% {
+				-webkit-transform: translateX(-150px) translateY(145px) ;
+			}
+			79.16% {
+				-webkit-transform: translateX(-150px) translateY(141px) ;
+			}
+			81.24% {
+				-webkit-transform: translateX(-115px) translateY(141px) ;
+			}
+			85.4%{
+				-webkit-transform: translateX(-1px) translateY(140px) ;
+			}
+			87.48%{
+				-webkit-transform: translateX(-1px) translateY(120px) ;			
+				}
+			89.65%{
+				-webkit-transform: translateX(-15px) translateY(120px) ;
+			}
+			91.96%{
+				-webkit-transform: translateX(-15px) translateY(110px) ;
+			}
+			93.72%{
+				-webkit-transform: translateX(-1px) translateY(110px);
+			}
+			95.8%{
+				-webkit-transform: translateX(-1px) translateY(5px);
+			}
+			97.88%{
+				-webkit-transform: translateX(-15px) translateY(5px) ;
+			}
+			99.96%{
+				-webkit-transform: translateX(-15px) translateY(0px) ;}			
+			100%{
+				-webkit-transform: translateX(-1px) translateY(0px) ;}
+		}
+		
+		.box2{
+			-webkit-animation:routeMove 71s infinite;
+		}
+		
+.box3{
+	width:54px;
+	height:64px;
+	background-image:url(images/3logo.gif);
+	background-repeat: no-repeat;
+	position:absolute;
+	top:20px;
+	left:330px;
+	margin-left:0px;
+
+	
+		}
+		
+		@-webkit-keyframes routeMoveDup{
+			
+			0%{
+				-webkit-transform: translateX(-155px) translateY(145px) ;
+				}
+			/*Arlington*/	
+			3.125% {
+				-webkit-transform: translateX(-165px) translateY(145px) ;
+			}
+			/*21st*/
+			6.25% {
+				-webkit-transform: translateX(-165px) translateY(140px) ;
+			}
+			/*Community*/
+			9.375% {
+				-webkit-transform: translateX(-200px) translateY(140px) ;
+			}
+			12.5% {
+				-webkit-transform: translateX(-270px) translateY(140px) ;
+			}
+			15.625% {
+				-webkit-transform: translateX(-275px) translateY(145px) ;
+			}
+			/*Ellenberger*/
+			18.75% {
+				-webkit-transform: translateX(-300px) translateY(140px) ;
+			}
+			
+			21.875% {
+				-webkit-transform: translateX(-315px) translateY(140px) ;
+			}
+			/*Pennsylvania*/
+			25% {
+				-webkit-transform: translateX(-315px) translateY(150px) ;				
+			}
+			/*Ohio*/
+			28.125% {
+				-webkit-transform: translateX(-315px) translateY(150px) ;
+			}
+			31.25% {
+				-webkit-transform: translateX(-315px) translateY(155px) ;
+			}
+			37.5% {
+				-webkit-transform: translateX(-300px) translateY(155px) ;
+			}
+			40.625% {
+				-webkit-transform: translateX(-300px) translateY(140px) ;
+			}
+			43.75% {
+				-webkit-transform: translateX(-275px) translateY(145px) ;
+			}
+			46.85% {
+				-webkit-transform: translateX(-270px) translateY(140px) ;
+			}
+			
+			50% {
+				-webkit-transform: translateX(-200px) translateY(140px) ;
+			}
+			51% {
+				-webkit-transform: translateX(-190px) translateY(147px) ;
+			}
+			52% {
+				-webkit-transform: translateX(-165px) translateY(147px) ;
+			}
+			53% {
+				-webkit-transform: translateX(-155px) translateY(145px) ;
+			}
+			53.125% {
+				-webkit-transform: translateX(-150px) translateY(145px) ;
+			}
+			56.25% {
+				-webkit-transform: translateX(-150px) translateY(141px) ;
+			}
+			59.375% {
+				-webkit-transform: translateX(-115px) translateY(141px) ;
+			}
+			62.55% {
+				-webkit-transform: translateX(-1px) translateY(140px) ;
+			}
+			65.625% {
+				-webkit-transform: translateX(-1px) translateY(120px) ;			
+			}
+			68.75% {
+				-webkit-transform: translateX(-15px) translateY(120px) ;
+			}
+			71.875% {
+				-webkit-transform: translateX(-15px) translateY(110px) ;
+			}
+			75% {
+				-webkit-transform: translateX(-1px) translateY(110px);
+			}
+			77.08% {
+				-webkit-transform: translateX(-1px) translateY(5px) ;
+			}
+			79.16% {
+				-webkit-transform: translateX(-15px) translateY(5px) ;
+			}
+			81.24% {
+				-webkit-transform: translateX(-15px) translateY(0px) ;
+			}
+			85.4%{
+				-webkit-transform: translateX(-1px) translateY(0px);
+			}
+			87.48%{
+				-webkit-transform: translateY(110px);
+				}
+			89.65%{
+				-webkit-transform: translateX(-15px) translateY(110px) ;
+			}
+			91.96%{
+				-webkit-transform: translateX(-15px) translateY(120px) ;
+			}
+			93.72%{
+				-webkit-transform: translateX(-1px) translateY(120px) ;
+			}
+			95.8%{
+				-webkit-transform: translateX(-1px) translateY(135px) ;
+			}
+			97.88%{
+				-webkit-transform: translateX(-150px) translateY(135px) ;
+			}
+			99.96%{
+				-webkit-transform: translateX(-150px) translateY(145px) ;
+				}			
+			100%{
+				}
+		}
+		
+		.box3{
+			-webkit-animation:routeMoveDup 71s infinite;
+		}
+		
+#clock { 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 0.8em; color: black;
+	background-color:#CCC;
+	text-shadow: 0px 1px 0px #FFF;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	padding: 4px; 
+	-webkit-box-shadow:0 0 15px #333; 
+	-moz-box-shadow: 0 0 15px #333; 
+	box-shadow:0 0 15px #333; 
+	
+	}
+
+		
+	</style>
+    
+<script type="text/javascript">    
+	function updateClock ( )
+{
+  var currentTime = new Date ( );
+
+  var currentHours = currentTime.getHours ( );
+  var currentMinutes = currentTime.getMinutes ( );
+  var currentSeconds = currentTime.getSeconds ( );
+
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+}
+</script>
+
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+
+
+	<div class="box1"></div>
+	<div class="box2"></div> 
+    <div class="box3"></div>
+<div><span id="clock">&nbsp;</span></div>
+
+</body>
+</html>
