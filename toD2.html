@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<!-- THREE STEPS TO INSTALL DATE IMAGES:
+
+  1.  Copy the coding into the HEAD of your HTML document
+  2.  Add the last code into the BODY of your HTML document
+  3.  Download the images and then upload them to your server  -->
+
+<!-- STEP ONE: Paste this code into the HEAD of your HTML document  -->
+
+<HEAD>
+<script type="text/javascript">
+function pixTimeChange() {
+  var t = new Date();
+  var h = t.getHours();
+  var m = t.getMinutes();
+  var s = t.getSeconds();
+
+
+  var r1="images/route3A.jpg";
+  var r2="images/route3B.jpg";
+  var r3="images/route3C.jpg";
+  var r4="images/route3D.jpg";
+  var r5="images/route3E.jpg";
+  var r6="images/route3F.jpg";
+  var r7="images/route3G.jpg";
+  var r8="images/route3H.jpg";
+  var r9="images/route3I.jpg";
+  var r10="images/route3J.jpg";
+  var r11="images/route3K.jpg";
+  var r12="images/route3L.jpg";
+  var r13="images/route3M.jpg";
+  var r14="images/route3N.jpg";
+  var r15="images/route3O.jpg";
+  var r15="images/route3P.jpg";
+
+
+  var el=document.getElementById('myimage');
+ 
+  // See the time below. Note: The time is in 24 hour format.
+  // In the example here, "7" = 7 AM; "17" =5PM.
+//  el.src = (h>=12 && h<16) ? r1 : r2;
+//  el.src = (h>=16 && h<17) ? r3 : r4;
+//  el.src = (h>=17 && h<20) ? r5 : r6;
+  switch (s) {
+    case 3: el.src = r1; break;
+    case 6: el.src = r2; break;
+    case 9: el.src = r3; break;
+    case 12: el.src = r4; break;
+    case 15: el.src = r5; break;
+    case 18: el.src = r6; break;
+    case 21: el.src = r7; break;
+    case 24: el.src = r8; break;
+    case 27: el.src = r9; break;
+    case 30: el.src = r10; break;
+    case 33: el.src = r11; break;
+    case 36: el.src = r12; break;
+    case 39: el.src = r13; break;
+    case 42: el.src = r14; break;
+    case 45: el.src = r15; break;
+    
+    default: el.src = r4; break;
+  }
+}
+
+setInterval(function() {
+},100);
+
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+ 
+addLoadEvent(function() {
+  pixTimeChange();
+
+});
+
+
+</script>
+</HEAD>
+
+<!-- STEP TWO: Copy this code into the BODY of your HTML document  -->
+
+<BODY>
+<div>
+<img src="" id="myimage" alt="time of day">
+</div>
+</BODY>
+</html>

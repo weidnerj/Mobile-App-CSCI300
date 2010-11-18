@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="tod2.js">
+</script>
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+
+<div><img id='theImage' src='images/night.jpg' />
+
+&nbsp;</div>
+<div><span id="clock">&nbsp;</span></div>
+<script type="text/javascript">
+
+
+      // setInterval makes the code run every xx milliseconds
+      //    if you just want it to run, delete this top line,
+      //    and the last line
+setInterval(function() {
+
+      // Create a new Date object with the current date/time
+    var date = new Date();
+
+      // Get a reference to the image in the HTML using its ID attribute
+    var img = document.getElementById('theImage');
+
+      // getHours() gets the hour of the day from 0 - 23,
+      //    so the way it is set up, if the hour is less
+      //    than 8, the first block will run, otherwise
+      //    the second block will run
+    if (date.getSeconds() <= 30) {
+
+                // This simply checks the src attribute of the image to see
+                //    if it already contains the word "night". That way we
+                //    don't update the src unless we need to.
+                // You could also eliminate this check if you're not going
+                //    to use setInterval.
+        if( img.src.indexOf('night') < 0 ) {
+
+                        // So if the hour is less than 8, and the
+                        //    src did not contain "night", then we need
+                        //    to change the src to the "night" image.
+            img.src = 'images/night.jpg'
+        }
+    } else {
+                // Same as above, only it executes if the hour was greater
+                //    than 8.
+                // Again, you could eliminate the check for the word
+                //    "day" if you're not going to use setInterval.
+        if( img.src.indexOf('day') < 0 ) {
+            img.src = 'images/morning.jpg'
+        }
+    }
+    // Run the setInteval every 60000 milliseconds
+    // Delete this line as well if you're not using setInterval
+},10000);
+
+//clock
+
+	function updateClock ( )
+{
+  var currentTime = new Date ( );
+
+  var currentHours = currentTime.getHours ( );
+  var currentMinutes = currentTime.getMinutes ( );
+  var currentSeconds = currentTime.getSeconds ( );
+
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+}
+
+</script>
+</body>
+</html>

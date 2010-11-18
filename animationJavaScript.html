@@ -4,94 +4,67 @@
 
 
 <head>
-<title>Javascript animation: Demo 1</title>
+
+   <meta name = "viewport" content = "width = device-width, user-scalable = yes" />
+   <title>Bus Map</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <style type="text/css">
-
-body {
- font:76% normal verdana,arial,tahoma;
-}
-
-#contianer {
-	
-}
-#routeMap {
-	background-image: url(images/route3.jpg);
-	background-repeat:no-repeat;
-	width: 100%;
-	position: absolute;
-	top: 128px;
-	height: 294px;
-	left: 0px;
-}
-
-h1, h2 {
- font-size:1em;
-}
-
-#routeObject {
-	/* simple box */
- background-image: url(images/3logo.png);
-	position:absolute;
-	left:59px;
-	top:730px;
-	width:267px;
-	line-height:3em;
-	white-space:nowrap;
-	padding:0.5em;
-	height: 230px;
-}
-/* clock*/
-.details
-{
-font-family		: MS Sans Serif, arial;
-font-size		: 14;
-font-weight		: bold;
-color			: #000000;
-background-color	: #CCCCCC;
-}
-
-</style>
-<script type="text/javascript">
-
-//scale
-
-	$(document).ready(function() {
-		var $winwidth = $(window).width();
-		$("rout3.jpg").attr({
-			width: $winwidth
-		});
-		$(window).bind("resize", function(){
-			var $winwidth = $(window).width();
-			$("img.source-image").attr({
-				width: $winwidth
-			});
-		 });
-	});
-
-
-//basick animation take one 
-var route = null; 
-
-function doMove() {
-  route.style.left = parseInt(route.style.left)+1+'px';
-  setTimeout(doMove,20); 
-}
-
-function init() {
-  route = document.getElementById('routeObject'); 
-  route.style.left = '0px'; // set its initial position to 0px I want this to start the init() on the clock setting
-  doMove(); // start animating
-}
-
-
-window.onload = init;
-
-
-//clock?
-
-
 <!--
+.mapTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.mapLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 38px;
+}
+
+.refreshLabel {
+    margin-left: 298px;
+}
+
+
+#clock { 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 0.8em; color: black;
+	background-color:#CCC;
+	text-shadow: 0px 1px 0px #FFF;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	padding: 4px; 
+	-webkit-box-shadow:0 0 15px #333; 
+	-moz-box-shadow: 0 0 15px #333; 
+	box-shadow:0 0 15px #333; 
+}
+-->
+</style>
+
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+
+<div><span class="mapTitle">Route:</span><span class="mapLabel">&nbsp;<a href="#">Select Route</a></span></div>
+<br />
+ 
+    <br/>
+    <img style="position:absolute;z-index:0" 
+         src="images/3logo.png" />
+    <img style="z-index:-1"
+         id="vehicles" 
+         src="images/route3.png" />
+ <br />
+ <div><span id="clock">&nbsp;</span></div>
+        
+
+    <script type="text/javascript">
+//clock
 function updateClock ( )
+
 {
   var currentTime = new Date ( );
 
@@ -99,52 +72,46 @@ function updateClock ( )
   var currentMinutes = currentTime.getMinutes ( );
   var currentSeconds = currentTime.getSeconds ( );
 
-  // Pad the minutes and seconds with leading zeros, if required
   currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
   currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
 
-  // Choose either "AM" or "PM" as appropriate
   var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
 
-  // Convert the hours component to 12-hour format if needed
   currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
 
-  // Convert an hours component of "0" to "12"
   currentHours = ( currentHours == 0 ) ? 12 : currentHours;
 
-  // Compose the string for display
   var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
 
-  // Update the time display
   document.getElementById("clock").firstChild.nodeValue = currentTimeString;
 }
-// -->
+//end clock
 
+
+	
+//place icon	
+	  var imageLoadTime = (new Date()).getTime();
+      var reloading = false;
+
+  
+  function reFresh() {
+    var currentTime = (new Date()).getTime();
+    if (currentTime > imageLoadTime && reloading==false) {
+	//20*1000 
+	
+      reloading = true;
+      var image = document.getElementById("vehicles");
+	  image.src = "images/route3.png" + currentTime;
+	  reloading = false;
+	  imageLoadTime = (new Date()).getTime();
+    }
+  }
+
+  setInterval('reFresh()', 3);
 </script>
-
-
-
-</script>
-</head>
-
-<body>
-
-
-<h1>Test 1 1</h1>
-<span id="clock">&nbsp;</span>
-
-<h2>Timeout-based animation</h2>
-
-<SPAN CLASS=details ID=clock STYLE="position:relative;"></SPAN>
-<div><img src="images/route3.png" alt="Demo Page" style="position: absolute; top: 0; left: 0;" /></div>
-<div id="routeObject">
-Route 3
-</div>
+   
+  
 
 
 </body>
 </html>
-
-
-
-

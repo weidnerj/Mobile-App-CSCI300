@@ -1,0 +1,72 @@
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <link rel="stylesheet" href="/wireless/style.css" type="text/css">  
+   <meta name = "viewport" content = "width = device-width, user-scalable = yes" />
+   <title>NextBus Map</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style type="text/css">
+<!--
+.mapTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.mapLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 38px;
+}
+
+.refreshLabel {
+    margin-left: 298px;
+}
+-->
+</style></head>
+
+<body>
+<nobr><span class="mapTitle">Route:</span><span class="mapLabel" style="margin-left:30px">&nbsp;<a href="#">Select Route</a></span></nobr>
+<br />
+
+<nobr><span class="mapLabel">&nbsp;</span></nobr>
+
+
+
+    <script>
+	  var imageLoadTime = (new Date()).getTime();
+      var reloading = false;
+
+  
+  function reloadIfNeeded() {
+    var currentTime = (new Date()).getTime();
+    if (currentTime > imageLoadTime + 20*1000 && reloading==false) {
+      reloading = true;
+      var image = document.getElementById("vehicles");
+	  image.src = "images/3logo.gif" + currentTime;
+	  reloading = true;
+	  imageLoadTime = (new Date()).getTime();
+    }
+  }
+
+  setInterval('reloadIfNeeded()', 10);
+</script>
+    
+    <br/>
+    <img style="position:absolute;z-index:-1" 
+         src="images/route3.jpg" />
+    <img style="z-index:0"
+         id="vehicles" 
+         src="images/3logo.gif" />
+  
+
+
+</body>
+</html>
