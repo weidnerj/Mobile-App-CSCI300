@@ -60,10 +60,25 @@
             });
 			
 			
-			 function resize() {
-        document.getElementById("theImage").style.height = (window.innerHeight - 100) * 0.9 + "px";
-      }
+			window.onresize = function() {
+//your code
 
+				 newHeight = ((window.innerHeight - 100) * 0.9) + "px";
+}
+			
+	/*		 function resize() {
+				 var newHeight;
+				 
+				 alert(newHeight);
+        document.getElementById("theImage").style.height = newHeight;
+      }*/
+	 function resize() {
+				 var newHeight;
+				 
+				 newHeight = ((window.innerHeight - 100) * 0.9) + "px";
+				 
+        window.getElementById("theImage").style.height = newHeight;
+      }
 
 setInterval(function() {
     var date = new Date();

@@ -61,7 +61,11 @@
 			
 			
 			 function resize() {
-        document.getElementById("theImage").style.height = (window.innerHeight - 100) * 0.9 + "px";
+				 var newHeight;
+				 
+				 newHeight = ((window.innerHeight - 100) * 0.9) + "px";
+				 
+        window.getElementById("theImage").style.height = newHeight;
       }
 
 

@@ -61,7 +61,7 @@
 			
 			
 			 function resize() {
-        document.getElementById("theImage").style.height = (window.innerHeight - 100) * 0.9 + "px";
+        document.getElementById("theImage").style.height = (document.body.clientHeight) * 0.9;
       }
 
 
@@ -146,10 +146,10 @@ function updateClock ( ){
 
 
 //resize
-//jquirey(window).bind('resize', function () {
+jquirey(window).bind('resize', function () {
 
-//alert('resize');
-//});
+alert('resize');
+});
 
         </script>
         <style type="text/css" media="screen">
@@ -330,7 +330,7 @@ function updateClock ( ){
             </div>
 
 
-<div class="myImg"><img src="images/Green_lines.png" />
+<div><img src="images/Green_lines.png" />
 
 &nbsp;</div>  
 </div>

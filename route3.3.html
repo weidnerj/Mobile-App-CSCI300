@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rout3.3</title>
+
+</head>
+
+<body onload="resize(); updateClock(); setInterval('updateClock()', 100 )">
+<div>
+<br/>
+<span id="clock">&nbsp;</span></div>
+<br/>
+<div><img id='theImage' src='' />
+
+&nbsp;</div>
+
+<script type="text/javascript">
+
+ function resize() {
+        document.getElementById("theImage").style.height = (document.body.clientHeight - 100) * 0.9;
+      }
+
+function updateClock ( ){
+  var currentTime = new Date ( );
+
+  var currentHours = currentTime.getHours ( );
+  var currentMinutes = currentTime.getMinutes ( );
+  var currentSeconds = currentTime.getSeconds ( );
+
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+}
+
+
+
+
+/*function routes = {
+	route3 ={
+		imgMarker = $(),*/
+	
+		
+ 
+var stops = [ {
+	"startTime,": 0
+	, "endTime,": 4
+	, "stopLetter": "A"}
+	,{
+	"startTime,": 5
+	, "endTime,": 9
+	, "stopLetter": "B"} 
+	,{
+	"startTime,": 10
+	, "endTime,": 14
+	, "stopLetter": "C"}
+	,{
+	"startTime,": 15
+	, "endTime,": 19
+	, "stopLetter": "D"}
+	,{
+	"startTime,": 20
+	, "endTime,": 24
+	, "stopLetter": "E"}
+	,{
+	"startTime,": 25
+	, "endTime,": 29
+	, "stopLetter": "F"}
+	,{
+	"startTime,": 30
+	, "endTime,": 34
+	, "stopLetter": "G"}
+	,{
+	"startTime,": 35
+	, "endTime,": 39
+	, "stopLetter": "H"}
+	,{
+	"startTime,": 40
+	, "endTime,": 44
+	, "stopLetter": "I"}
+	,{
+	"startTime,": 45
+	, "endTime,": 49
+	, "stopLetter": "K"}
+	,{
+	"startTime,": 50
+	, "endTime,": 60
+	, "stopLetter": "L"} ]
+	
+for (var i=0; ii=stops.lenght; i<ii; i++) {
+	if(date.getSeconds >= stops[i].startTime && date.getSeconds <= stops[i].endTime){
+		img.src = 'images/route3A.jpg' + stops[i].stopLetter + "img";
+		break;
+	}
+}
+
+for(var i=0; i<len; i++) {
+	var value = arr[i];
+	alert(i =") "+value);
+}
+
+</script>
+</body>
+</html>

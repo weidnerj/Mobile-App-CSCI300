@@ -4,83 +4,103 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Untitled Document</title>
 
-<script type="text/javascript" src="tod2.js">
+<script type="text/javascript" src=".js">
 </script>
+<style type="text/css">
+* {
+	margin:0px;
+	padding:0px;
+	
+	}
+	
+  html { height: 100% }
+  body { 
+  	height: 100%; 
+  	 } 
+
+#clock { 
+	margin-top: 25px;
+	margin-left: 25px;
+	
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 0.8em; color: black;
+	background-color:#CCC;
+	text-shadow: 0px 1px 0px #FFF;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	padding: 4px;
+	-webkit-box-shadow:0 0 15px #333; 
+	-moz-box-shadow: 0 0 15px #333; 
+	box-shadow:0 0 15px #333;
+	z-index: -100;
+	
+	}
+
+</style>
+
 </head>
 
-<body onload="updateClock(); setInterval('updateClock()', 100 )">
-<div><span id="clock">&nbsp;</span></div>
+<body >
+<div onload="resize(); updateClock(); setInterval('updateClock()', 100 )">
+<br/>
+<span id="clock">&nbsp;</span></div>
+<br/>
 <div><img id='theImage' src='' />
 
 &nbsp;</div>
 
 <script type="text/javascript">
 
+ function resize() {
+        document.getElementById("theImage").style.height = (window.innerHeight - 100) * 0.9;
+      }
 
-      // setInterval makes the code run every xx milliseconds
-      //    if you just want it to run, delete this top line,
-      //    and the last line
+
 setInterval(function() {
-
-      // Create a new Date object with the current date/time
     var date = new Date();
-
-      // Get a reference to the image in the HTML using its ID attribute
     var img = document.getElementById('theImage');
 
-      // getHours() gets the hour of the day from 0 - 23,
-      //    so the way it is set up, if the hour is less
-      //    than 8, the first block will run, otherwise
-      //    the second block will run
     if (date.getSeconds() >=0 && date.getSeconds()<= 4) {
 
-                // This simply checks the src attribute of the image to see
-                //    if it already contains the word "night". That way we
-                //    don't update the src unless we need to.
-                // You could also eliminate this check if you're not going
-                //    to use setInterval.
-       
-
-                        // So if the hour is less than 8, and the
-                        //    src did not contain "night", then we need
-                        //    to change the src to the "night" image.
             img.src = 'images/route3A.jpg'
 	}
 	else if (date.getSeconds() >=5 && date.getSeconds()<= 10) { 
 		img.src = 'images/route3B.jpg';
-}
+	}
 
-else if (date.getSeconds() >=11 && date.getSeconds()<= 15) { 
+	else if (date.getSeconds() >=11 && date.getSeconds()<= 15) { 
 		img.src = 'images/route3C.jpg';
-}
+	}
 
-else if (date.getSeconds() >=16 && date.getSeconds()<= 20) { 
+	else if (date.getSeconds() >=16 && date.getSeconds()<= 20) { 
 		img.src = 'images/route3D.jpg';
-}
+	}
 
-else if (date.getSeconds() >=21 && date.getSeconds()<= 25) { 
+	else if (date.getSeconds() >=21 && date.getSeconds()<= 25) { 
 		img.src = 'images/route3E.jpg';
-}
+	}
 
-else if (date.getSeconds() >=26 && date.getSeconds()<= 30) { 
+	else if (date.getSeconds() >=26 && date.getSeconds()<= 30) { 
 		img.src = 'images/route3F.jpg';
-}
+	}
 
-else if (date.getSeconds() >=31 && date.getSeconds()<= 35) { 
+	else if (date.getSeconds() >=31 && date.getSeconds()<= 35) { 
 		img.src = 'images/route3G.jpg';
-}					
+	}					
 
-else if (date.getSeconds() >=36 && date.getSeconds()<= 40) { 
+	else if (date.getSeconds() >=36 && date.getSeconds()<= 40) { 
 		img.src = 'images/route3H.jpg';
-}
+	}
 
-else if (date.getSeconds() >=41 && date.getSeconds()<= 45) { 
+	else if (date.getSeconds() >=41 && date.getSeconds()<= 45) { 
 		img.src = 'images/route3I.jpg';
-}
+	}
 
-else if (date.getSeconds() >=46 && date.getSeconds()<= 50) { 
+	else if (date.getSeconds() >=46 && date.getSeconds()<= 50) { 
 		img.src = 'images/route3J.jpg';
-}
+	}
 
 else if (date.getSeconds() >=51 && date.getSeconds()<= 55) { 
 		img.src = 'images/route3K.jpg';
@@ -90,66 +110,13 @@ else if (date.getSeconds() >=56 && date.getSeconds()<= 60) {
 		img.src = 'images/route3L.jpg';
 }					
 				
-   /*    
-    } else {
-                // Same as above, only it executes if the hour was greater
-                //    than 8.
-                // Again, you could eliminate the check for the word
-                //    "day" if you're not going to use setInterval.
-        if( img.src.indexOf('route3B') < 0 ) {
-            img.src = 'images/route3B.jpg'
-        }
-    }
+
 	
-	    if (date.getSeconds() <=5 && currentSeconds<=8) {
-
-       if( img.src.indexOf('route3B') < 0 ) {
-
-            img.src = 'images/route3B.jpg'
-        }
-    } else {
-              
-        if( img.src.indexOf('route3C') < 0 ) {
-            img.src = 'images/night.jpg'
-        }
-    }
-	
-	 if (date.getSeconds() <=5 && currentSeconds<=8) {
-
-       if( img.src.indexOf('route3B') < 0 ) {
-
-            img.src = 'images/route3B.jpg'
-        }
-    } else {
-              
-        if( img.src.indexOf('route3C') < 0 ) {
-            img.src = 'images/night.jpg'
-        }
-    }
-	*/
-	
-/*	if (date.getSeconds() >=9 && currentSeconds<=12) {
-
-       if( img.src.indexOf('route3C') < 0 ) {
-
-            img.src = 'images/route3C.jpg'
-        }
-    } else {
-              
-        if( img.src.indexOf('route3D') < 0 ) {
-            img.src = 'images/route3D.jpg'
-        }
-    }*/
-	
-	
-    // Run the setInteval every 60000 milliseconds
-    // Delete this line as well if you're not using setInterval
 },100);
 
 //clock
 
-	function updateClock ( )
-{
+function updateClock ( ){
   var currentTime = new Date ( );
 
   var currentHours = currentTime.getHours ( );
@@ -169,6 +136,11 @@ else if (date.getSeconds() >=56 && date.getSeconds()<= 60) {
 
   document.getElementById("clock").firstChild.nodeValue = currentTimeString;
 }
+
+
+//resize
+
+
 
 </script>
 </body>

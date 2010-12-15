@@ -2,24 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Bus Ap by J. Damon Weidner</title>
-        <style type="text/css" media="screen">@import "jqtouch.min.css";</style>
-        <style type="text/css" media="screen">@import "jqt/theme.min.css";</style>
-        <script src="jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+        <title>jQTouch &beta;</title>
+        <style type="text/css" media="screen">@import "../../jqtouch/jqtouch.min.css";</style>
+        <style type="text/css" media="screen">@import "../../themes/jqt/theme.min.css";</style>
+        <script src="../../jqtouch/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             var jQT = new $.jQTouch({
-                icon: 'bus.png',
+                icon: 'jqtouch.png',
                 addGlossToIcon: false,
-                startupScreen: 'bus_startup.png',
+                startupScreen: 'jqt_startup.png',
                 statusBar: 'black',
                 preloadImages: [
-                    'jqt/img/back_button.png',
-                    'jqt/img/back_button_clicked.png',
-                    'jqt/img/button_clicked.png',
-                    'jqt/img/grayButton.png',
-                    'themes/jqt/img/whiteButton.png',
-                    'themes/jqt/img/loading.gif'
+                    '../../themes/jqt/img/back_button.png',
+                    '../../themes/jqt/img/back_button_clicked.png',
+                    '../../themes/jqt/img/button_clicked.png',
+                    '../../themes/jqt/img/grayButton.png',
+                    '../../themes/jqt/img/whiteButton.png',
+                    '../../themes/jqt/img/loading.gif'
                     ]
             });
             // Some sample Javascript functions:
@@ -29,7 +29,7 @@
                     $(this).html('You swiped <strong>' + data.direction + '</strong>!');
                 });
                 $('a[target="_blank"]').click(function() {
-                    if (confirm('Opening a new window.')) {
+                    if (confirm('This link opens in a new window.')) {
                         return true;
                     } else {
                         $(this).removeClass('active');
@@ -58,104 +58,8 @@
                     $('#orient').html('Orientation: ' + data.orientation);
                 });
             });
-			
-			
-			 function resize() {
-        document.getElementById("theImage").style.height = (window.innerHeight - 100) * 0.9 + "px";
-      }
-
-
-setInterval(function() {
-    var date = new Date();
-    var img = document.getElementById('theImage');
-
-    if (date.getSeconds() >=0 && date.getSeconds()<= 4) {
-
-            img.src = 'images/route3A.jpg'
-	}
-	else if (date.getSeconds() >=5 && date.getSeconds()<= 10) { 
-		img.src = 'images/route3B.jpg';
-	}
-
-	else if (date.getSeconds() >=11 && date.getSeconds()<= 15) { 
-		img.src = 'images/route3C.jpg';
-	}
-
-	else if (date.getSeconds() >=16 && date.getSeconds()<= 20) { 
-		img.src = 'images/route3D.jpg';
-	}
-
-	else if (date.getSeconds() >=21 && date.getSeconds()<= 25) { 
-		img.src = 'images/route3E.jpg';
-	}
-
-	else if (date.getSeconds() >=26 && date.getSeconds()<= 30) { 
-		img.src = 'images/route3F.jpg';
-	}
-
-	else if (date.getSeconds() >=31 && date.getSeconds()<= 35) { 
-		img.src = 'images/route3G.jpg';
-	}					
-
-	else if (date.getSeconds() >=36 && date.getSeconds()<= 40) { 
-		img.src = 'images/route3H.jpg';
-	}
-
-	else if (date.getSeconds() >=41 && date.getSeconds()<= 45) { 
-		img.src = 'images/route3I.jpg';
-	}
-
-	else if (date.getSeconds() >=46 && date.getSeconds()<= 50) { 
-		img.src = 'images/route3J.jpg';
-	}
-
-else if (date.getSeconds() >=51 && date.getSeconds()<= 55) { 
-		img.src = 'images/route3K.jpg';
-}
-
-else if (date.getSeconds() >=56 && date.getSeconds()<= 60) { 
-		img.src = 'images/route3L.jpg';
-}					
-				
-
-	
-},100);
-
-//clock
-
-function updateClock ( ){
-  var currentTime = new Date ( );
-
-  var currentHours = currentTime.getHours ( );
-  var currentMinutes = currentTime.getMinutes ( );
-  var currentSeconds = currentTime.getSeconds ( );
-
-  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
-  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
-
-  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
-
-  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
-
-  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
-
-  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
-
-  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
-}
-
-
-//resize
-//jquirey(window).bind('resize', function () {
-
-//alert('resize');
-//});
-
         </script>
         <style type="text/css" media="screen">
-		
-		 html { height: 100% }
-		 
             body.fullscreen #home .info {
                 display: none;
             }
@@ -164,7 +68,7 @@ function updateClock ( ){
                 text-shadow: rgba(255, 255, 255, 0.3) 0px -1px 0;
                 font-size: 13px;
                 text-align: center;
-                background: #343c61;
+                background: #161618;
             }
             #about p {
                 margin-bottom: 8px;
@@ -174,35 +78,11 @@ function updateClock ( ){
                 font-weight: bold;
                 text-decoration: none;
             }
-			
-			#clock { 
-	margin-top: 25px;
-	margin-left: 25px;
-	
-	font-family: Arial, Helvetica, sans-serif; 
-	font-size: 0.8em; color: black;
-	background-color:#CCC;
-	text-shadow: 0px 1px 0px #FFF;
-	-webkit-border-top-left-radius: 8px;
-	-webkit-border-top-right-radius: 8px;
-	-webkit-border-bottom-left-radius: 8px;
-	-webkit-border-bottom-right-radius: 8px;
-	padding: 4px;
-	-webkit-box-shadow:0 0 15px #333; 
-	-moz-box-shadow: 0 0 15px #333; 
-	box-shadow:0 0 15px #333;
-	z-index: -100;
-			}
-			
-			#theImage{
-				height: 100%;
-				}
-	
         </style>
     </head>
-    <body onload="resize(); updateClock(); setInterval('updateClock()', 100 )">
+    <body>
         <div id="about" class="selectable">
-                <p><img src="bus.png" /></p>
+                <p><img src="jqtouch.png" /></p>
                 <p><strong>Bus Route</strong><br />Version 1.0 beta<br />
                    <a href="http://www.damonweidner.com"> By Damon Weidner</a> 
                     <br/> <small>built on JQtouch By <a href="http://www.davidkaneda.com">David Kaneda</a></small></p>
@@ -278,64 +158,27 @@ function updateClock ( ){
                 <li class="forward"><a target="_webapp" href="../clock/">Clock app</a></li>
             </ul>
         </div>
-		
-        <div id="route3">
+        <!--<div id="edge">
             <div class="toolbar">
-                <h1>Route 3 Animated</h1>
+                <h1>Edge to Edge</h1>
                 <a href="#" class="back">Back</a>
-                
-                
-                
             </div>
-
-<div>
-<br/>
-<span id="clock">&nbsp;</span></div>
-<br/>
-<div><img id='theImage' src='' />
-
-&nbsp;</div>           
-            
-        </div>
-        
-        
-        
-        
-        
-                <div id="red">
-            <div class="toolbar">
-                <h1>Red Line Static</h1>
-                <a href="#" class="back">Back</a>
-                
-                
-                
-            </div>
-
-
-<div><img src="images/Red_Line.png" />
-
-&nbsp;</div>  
-</div>
-
-
-
-
-                <div id="green">
-            <div class="toolbar">
-                <h1>Green Line Static</h1>
-                <a href="#" class="back">Back</a>
-                
-                
-                
-            </div>
-
-
-<div class="myImg"><img src="images/Green_lines.png" />
-
-&nbsp;</div>  
-</div>
-
-        
+            <ul class="rounded">
+                <li class="sep">F</li>
+                <li><a href="#">Flintstone, <em>Fred</em></a></li>
+                <li><a href="#">Flintstone, <em>Pebble</em></a></li>
+                <li><a href="#">Flintstone, <em>Wilma</em></a></li>
+                <li class="sep">J</li>
+                <li><a href="#">Jetson, <em>Elroy</em></a></li>
+                <li><a href="#">Jetson, <em>George</em></a></li>
+                <li><a href="#">Jetson, <em>Jane</em></a></li>
+                <li><a href="#">Jetson, <em>Judy</em></a></li>
+                <li class="sep">R</li>
+                <li><a href="#">Rubble, <em>Bambam</em></a></li>
+                <li><a href="#">Rubble, <em>Barney</em></a></li>
+                <li><a href="#">Rubble, <em>Betty</em></a></li>
+            </ul>
+        </div>-->
         <div id="extensions">
             <div class="toolbar">
                 <h1>Extensions</h1>
@@ -392,11 +235,11 @@ function updateClock ( ){
             <ul class="rounded">
                 <li class="arrow"><a href="#ui">Choose a Route</a><small class="counter">30</small></li>
                 
-               <li class="arrow"><a class="pop" href="#red">Red Line</a> <small class="counter">1</small></li>
+               <li class="arrow"><a href="#animations">Red Line</a> <small class="counter">1</small></li>
                
-                <li class="arrow"><a class="pop" href="#green">Green LIne</a> <small class="counter">1</small></li>
-               <li><p>Indianapolis ICE Lines</p> <small class="counter">1</small></li>
-                <li><p>IMA</p> <small class="counter">2</small></li>
+                <li class="arrow"><a href="#ajax">Green LIne</a> <small class="counter">2</small></li>
+               <li class="arrow"><a href="#callbacks">Callback Events</a> <small class="counter">3</small></li>
+                <li class="arrow"><a href="#extensions">Extensions</a> <small class="counter">4</small></li>
               <!--    <li class="arrow"><a href="#demos">Demos</a> <small class="counter">2</small></li>-->
             
             </ul>
@@ -405,14 +248,14 @@ function updateClock ( ){
             <ul class="rounded">
                 <li class="forward"><a href="http://www.indygo.net/" target="_blank">IndyGo</a></li>
                 <li class="forward"><a href="http://www.damonweidner.com" target="_blank">My Website</a></li>
-               <!-- <li class="forward"><a href="http://code.google.com/p/jqtouch/w/list" target="_blank">Google Code</a></li>-->
+                <li class="forward"><a href="http://code.google.com/p/jqtouch/w/list" target="_blank">Google Code</a></li>
             </ul>
             <ul class="individual">
-                <li><a href="mailto:damon.weidner@gmail.com?subject=Comments from Mobile Bus Ap" target="_blank">Email</a></li>
-                <li><a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=fpmstEgiGcBwDwuLIA-IcjELu7iXeRXzYNahtfthHax93LjUfMhJcr3nhh8&dispatch=5885d80a13c0db1f8e263663d3faee8d9384d85353843a619606282818e091d0" target="_blank">Donate</a></li>
+                <li><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#107;&#064;&#109;&#111;&#114;&#102;&#117;&#110;&#107;&#046;&#099;&#111;&#109;" target="_blank">Email</a></li>
+                <li><a href="http://tinyurl.com/support-jqt" target="_blank">Donate</a></li>
             </ul>
             <div class="info">
-                <p><!--Add this page to your home screen to view the custom icon, startup screen, and full screen mode.--></p>
+                <p>Add this page to your home screen to view the custom icon, startup screen, and full screen mode.</p>
             </div>
         </div>
         <div id="metal">
@@ -459,7 +302,7 @@ function updateClock ( ){
 
             <h2>Lines</h2>
             <ul class="rounded">
-                <li class="arrow"><a class="flip" href="#route3">3 - Michigan St.</a></li>
+                <li class="arrow"><a href="#edge">3 - Michigan St.</a></li>
                 <li class="arrow">2 - East 34th St.</li>
                 <li class="arrow">4 - Ft. Harrison</li>
                 <li class="arrow">5 - East 25th St./N. Harding</li>
